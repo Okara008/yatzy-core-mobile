@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2017 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1181px" height="1181px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1181 1181"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="722" font-variant="normal" style="fill-rule:nonzero" font-weight="700">
+	<font-face 
+		font-family="Arial">
+		<font-face-src>
+			<font-face-name name="Arial Bold"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="A" horiz-adv-x="722" d="M717.999 0l-156.167 0 -61.8331 163 -287.165 0 -59.5013 -163 -153.333 0 278.001 715.999 153.164 0 286.834 -715.999zm-265 284l-99.4998 265 -96.6656 -265 196.165 0z"/>
+   <glyph unicode="Z" horiz-adv-x="610" d="M10.0011 0l0 130 377.332 464.998 -334.334 0 0 121 524 0 0 -111.998 -392 -483 406.998 0 0 -121 -581.997 0z"/>
+   <glyph unicode="T" horiz-adv-x="610" d="M234.001 0l0 594.998 -212.001 0 0 121 568 0 0 -121 -211.002 0 0 -594.998 -144.998 0z"/>
+   <glyph unicode="Y" horiz-adv-x="666" d="M260.998 0l0 301.334 -262.5 414.665 169.502 0 169.333 -283.498 164.832 283.498 166.333 0 -262.5 -415.667 0 -300.332 -145.001 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial";font-variant:normal;font-weight:bold;src:url("#FontID0") format(svg)}
+    .fil1 {fill:black}
+    .fil0 {fill:#E6E6E6}
+    .fnt0 {font-weight:bold;font-size:393px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1654212905696">
+   <rect class="fil0" width="1181" height="1181" rx="207" ry="207"/>
+   <g transform="matrix(0.965926 -0.258819 0.258819 0.965926 -649.901 480.097)">
+    <text x="591" y="591"  class="fil1 fnt0">YATZY</text>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2017 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1181px" height="1181px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1181 1181"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="722" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="700">
+	<font-face 
+		font-family="Arial">
+		<font-face-src>
+			<font-face-name name="Arial Bold"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="?" horiz-adv-x="610" d="M367.002 184.002l-125.001 0c-0.333344,17.9991 -0.499289,28.8321 -0.499289,32.8322 0,40.3347 6.66689,73.5003 20.1666,99.6671 13.3338,26.0009 39.9999,55.3337 80.1672,88.0015 40.1673,32.5004 64.1666,53.8329 72.0009,64.0007 12.1663,15.9991 18.1665,33.6663 18.1665,52.8329 0,26.5002 -10.667,49.3335 -32.167,68.1668 -21.334,19.0006 -50.1676,28.5002 -86.5007,28.5002 -34.9997,0 -64.1666,-10.0003 -87.8341,-29.8336 -23.5001,-19.9992 -39.6665,-50.3336 -48.4994,-91.1661l-126.001 15.9991c3.66679,58.5012 28.5002,108.001 74.6677,148.835 46.166,40.834 106.833,61.1665 181.834,61.1665 78.9997,0 141.833,-20.6659 188.501,-61.8332 46.6668,-41.1673 69.9994,-89.0001 69.9994,-143.834 0,-30.1669 -8.49956,-59.0005 -25.6661,-86 -17.1665,-27.0009 -53.667,-63.8333 -109.835,-110.501 -28.9995,-23.9993 -47.0001,-43.4993 -54.0003,-58.1664 -7.00023,-14.6672 -10.1663,-40.834 -9.49959,-78.6664zm-125.001 -184.002l0 137 125.001 0 0 -137 -125.001 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial";font-variant:normal;font-style:normal;font-weight:bold;src:url("#FontID0") format(svg)}
+    .fil1 {fill:black}
+    .fil0 {fill:#E6E6E6}
+    .fnt0 {font-weight:bold;font-size:811px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1654205566400">
+   <rect class="fil0" width="1181" height="1181" rx="207" ry="207"/>
+   <g transform="matrix(0.999994 0 0 1 -250.283 293.293)">
+    <text x="591" y="591"  class="fil1 fnt0">?</text>
+   </g>
+  </g>
+ </g>
+</svg>
