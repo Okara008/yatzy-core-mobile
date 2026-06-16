@@ -19,7 +19,7 @@
 		"android": {
 		"package": "com.Okara008.yatzycore",
 		"adaptiveIcon": {
-			"foregroundImage": "./assets/yatzy_icon.png",
+			"foregroundImage": "./assets/yatzy_icon_splash.png",
 			"backgroundColor": "#ffffff"
 		},
 		"edgeToEdgeEnabled": true
