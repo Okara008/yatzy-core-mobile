@@ -10,8 +10,8 @@ import x_button from '../assets/x_icon.png'
 import { useEffect, useRef, useState } from 'react'
 
 const Tutorial = ({wasClicked, removeTutorial}) => {
-	const { width } = useWindowDimensions()
-	const styles = imageStyling(width)
+	const { height } = useWindowDimensions()
+	const styles = imageStyling(height)
 
 	const tutorial_display_ref = useRef([
         {img: tutorial_roll, info: "Hit the Roll button to play → You can roll up to 3 times on your turn."},
@@ -75,7 +75,7 @@ const Tutorial = ({wasClicked, removeTutorial}) => {
 
 export default Tutorial
 
-const imageStyling = (width) => {
+const imageStyling = (height) => {
 	return (
 		StyleSheet.create({
 			outerShell: {
@@ -87,7 +87,7 @@ const imageStyling = (width) => {
 				justifyContent: 'center',
 				alignSelf: 'center',
 				flexDirection: 'column',
-				height: '100%',
+				height: height,
 				width: '100%',
 				backgroundColor: 'rgba(0, 0, 0, 0.6)'
 			},

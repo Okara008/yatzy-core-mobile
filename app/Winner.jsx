@@ -5,8 +5,10 @@ import {useState, useEffect, useContext} from "react"
 import { StatsContext } from './Context'
 
 function Winner({viewWinnerPage, winner_name, wasWon, restartGame, setViewPage}){
-    const { width } = useWindowDimensions()
-	const styles = imageStyling(width)
+    let { width, height } = useWindowDimensions()
+    width = (width < 400 ? width : 300)
+
+	const styles = imageStyling(width, height)
     const [showStats, setShowStats] = useState({p1: true, p2: true})
     const {playerStats, playerNames} = useContext(StatsContext)
 
@@ -133,7 +135,7 @@ function Winner({viewWinnerPage, winner_name, wasWon, restartGame, setViewPage})
 
 export default Winner
 
-const imageStyling = (width) => {
+const imageStyling = (width, height) => {
     return(
         StyleSheet.create({
             outerShell: {
@@ -145,7 +147,7 @@ const imageStyling = (width) => {
                 justifyContent: 'center',
                 alignSelf: 'center',
                 flexDirection: 'column',
-                height: '100%',
+                height: height,
                 width: '100%',
                 backgroundColor: 'rgba(0, 0, 0, 0.6)'
             },

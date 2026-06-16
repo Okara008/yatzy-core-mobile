@@ -260,7 +260,7 @@ function Game(){
                 <Image source={helpIcon} style={styles.helpIcon} alt='How to play'/>
             </Pressable>
 
-            <ScoreBoard score1={finalTotalRef.current.p1} score2 ={finalTotalRef.current.p2}/>
+            <ScoreBoard scores={finalTotalRef.current}/>
             <Board toggleRestart={toggleRestart} playTriggered={playTriggered} activeBoxP1={isplayer1} triggerRoll={clickCount} dice_indexes={dice_indexes} disable_playBtn={setDisableButton} getTotalScore={getTotalScore} hasRestarted={hasRestarted}/>
             <DiceRoller active={isplayer1} set_dice_indexes={set_dice_indexes} numOfRolls={clickCount} dice_starting_index={dice_starting_index.current} disable_rollBtn={setDisableButton} dicesProps={dicesProps} setDicesProps={setDicesProps} toggleDice={toggleDice}/>
             <RollBtn clickCount={clickCount} setClickCount={setClickCount} triggerRoll={triggerRoll} handle_play={handle_play} disableRoll={disableButton.rollBtn} disablePlay={disableButton.playBtn} playerTurn={isplayer1}/>

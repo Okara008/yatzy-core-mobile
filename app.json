@@ -1,34 +1,40 @@
 {
-	"expo": {
-		"scheme": "myApp",
-		"name": "Yatzy Core",
-		"slug": "yatzy-core",
-		"version": "1.0.0",
-		"orientation": "portrait",
-		"icon": "./assets/yatzy_icon.png",
-		"userInterfaceStyle": "light",
-		"newArchEnabled": true,
-		"splash": {
-		"image": "./assets/yatzy_icon.png",
-		"resizeMode": "contain",
-		"backgroundColor": "#ffffff"
-		},
-		"ios": {
-			"supportsTablet": true
-		},
-		"android": {
-		"package": "com.Okara008.yatzycore",
-		"adaptiveIcon": {
-			"foregroundImage": "./assets/yatzy_icon_splash.png",
-			"backgroundColor": "#ffffff"
-		},
-		"edgeToEdgeEnabled": true
-		},
-		"web": {
-		"favicon": "./assets/yatzy_icon.png"
-		},
-		"plugins": [
-			"expo-router"
-		]
-	}
+  "expo": {
+    "scheme": "yatzyCore",
+    "name": "Yatzy Core",
+    "slug": "yatzy-core",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/yatzy_icon_splash.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/yatzy_icon_splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.Okara008.yatzycore",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/yatzy_icon_splash.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/yatzy_icon_splash.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c677e84a-c932-4667-8a58-8c7dd04f3168"
+      }
+    }
+  }
 }

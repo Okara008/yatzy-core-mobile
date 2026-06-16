@@ -2,7 +2,9 @@ import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-na
 import React, { useRef, useState } from 'react'
 
 const RollBtn = ({clickCount, setClickCount, triggerRoll, disableRoll, disablePlay, handle_play, playerTurn}) => {
-	const { width } = useWindowDimensions()
+	let { width } = useWindowDimensions()
+	width = (width < 400 ? width : 300)
+
 	const styles = imageStyling(width)
 
 	return (
@@ -47,7 +49,7 @@ const imageStyling = (width) => {
 				borderRadius: 16,
 				borderWidth: 4,
 				borderColor: 'rgb(65, 5, 5)',
-				width: (width * .6)
+				width: (width * .7)
 			},
 			btnRollDisabled: {
 				backgroundColor: 'gray',
@@ -66,7 +68,7 @@ const imageStyling = (width) => {
 				flexDirection: 'row',
 				alignItems: 'center',
 				justifyContent: 'center',
-				width: width * .3
+				width: width * .25
 			},
 			btnText: {
 				color: 'white',

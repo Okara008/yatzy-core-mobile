@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Pressable, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native'
 import { useState, useRef, useEffect, useContext } from 'react'
 import { StatsContext } from './Context'
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -154,6 +154,9 @@ function Login({getStats, viewLoginPage}) {
         setLoginMethod({p1: '', p2: ''})
     }, [viewLoginPage])
 
+    const { width, height } = useWindowDimensions()
+	const styles = imageStyling(width, height)
+
 return(<>
     {viewLoginPage && (
 		<View style={styles.outerShell}>
@@ -162,7 +165,7 @@ return(<>
 
 				<View style={styles.form_content}>
 					<View style={styles.userLoginDetails}>
-						<TextInput value={playerNames.p1} style={styles.innertextInput} onChangeText={(text) => setPlayerNames(prev => ({...prev, p1: text.trim()}))} placeholderTextColor="rgba(245, 222, 179, .7)" placeholder="Enter Username..."/>
+						<TextInput onSubmitEditing={getLoginMethod} value={playerNames.p1} style={styles.innertextInput} onChangeText={(text) => setPlayerNames(prev => ({...prev, p1: text.trim()}))} placeholderTextColor="rgba(245, 222, 179, .7)" placeholder="Enter Username..."/>
 						{errorMessage.p1 && (
                             <Text style={styles.errorMessage}>{errorMessage.p1}</Text>
                         )}
@@ -199,7 +202,7 @@ return(<>
 					</View>
 					
 					<View style={styles.userLoginDetails}>
-						<TextInput value={playerNames.p2} style={styles.innertextInput} onChangeText={(text) => setPlayerNames(prev => ({...prev, p2: text.trim()}))} placeholderTextColor="rgba(245, 222, 179, .7)" placeholder="Enter Username..."/>
+						<TextInput onSubmitEditing={getLoginMethod} value={playerNames.p2} style={styles.innertextInput} onChangeText={(text) => setPlayerNames(prev => ({...prev, p2: text.trim()}))} placeholderTextColor="rgba(245, 222, 179, .7)" placeholder="Enter Username..."/>
 						{errorMessage.p2 && (
                             <Text style={styles.errorMessage}>{errorMessage.p2}</Text>
                         )}
@@ -249,108 +252,112 @@ return(<>
 
 export default Login
 
-const styles = StyleSheet.create({
-	outerShell: {
-		position: 'absolute',
-		zIndex: 998,
-        top: 0,
-        left: 0,
-        alignItems: 'center',
-		justifyContent: 'center',
-        alignSelf: 'center',
-		flexDirection: 'column',
-		height: '100%',
-		width: '100%',
-		backgroundColor: 'rgba(0, 0, 0, 0.6)'
-	},
-    innertext: {
-        backgroundColor: 'rgb(153, 55, 38)',
-        maxWidth: 800,
-        width: '100%',
-        minHeight: 240,
-        padding: 32,
-        borderRadius: 8,
-    },
-    form_content: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 32,
-        gap: 32
-    },
-    userLoginDetails:{
-        flexDirection: 'column',
-        alignItems: 'center',
-        width: '100%',
-        justifyContent: 'center'
-    },
-    innertextH3: {
-        textAlign: 'center',
-        color: 'white',
-        fontSize: 27,
-        borderBottomWidth: 2,
-        borderBottomColor: 'black',
-        marginBottom: 16,
-        paddingVertical: 8,
-        paddingHorizontal: 8
-    },
-    innertextInput: {
-        width: '100%',
-        color: 'wheat',
-        paddingVertical: 16,
-        paddingHorizontal: 32,
-        borderRadius: 8,
-        borderWidth: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.6)'
-    },
-    login_btns: {
-        marginVertical: 16,
-        marginHorizontal: 0,
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: 16,
-        justifyContent: 'space-around'
-    },
-    checked_btn:{
-        backgroundColor: 'green'
-    },
-    login_methods_btn: {
-        backgroundColor: 'rgba(245, 222, 179, 0.7)',
-        paddingVertical: 6.4,
-        paddingHorizontal: 16,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 2,
-        borderColor: 'black',
-        borderRadius: 6.4
-    },
-    start_game_btnActive: {
-        backgroundColor: 'rgba(255, 255, 255, 0.8)'
-    },
-    errorMessage: {
-        textAlign: 'center',
-        display: 'flex',
-        color: '#FFC107',
-        marginTop: 6.4
-    },
-    loadingSpinner: {
-        width: 16,
-        height: 16
-    },
-    start_game_btn: {
-        paddingVertical: 8,
-        paddingHorizontal: 16,
-        borderWidth: 0,
-        backgroundColor: 'white',
-        borderRadius: 32,
-        shadowColor: 'black',
-        shadowOffset: { width: 0, height: 0 },
-        shadowOpacity: 1,
-        shadowRadius: 7,
-        textAlign: 'center',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
+const imageStyling = (height) => {
+	return (
+        StyleSheet.create({
+            outerShell: {
+                position: 'absolute',
+                zIndex: 998,
+                top: 0,
+                left: 0,
+                alignItems: 'center',
+                justifyContent: 'center',
+                alignSelf: 'center',
+                flexDirection: 'column',
+                height: '100%',
+                width: '100%',
+                backgroundColor: 'rgba(0, 0, 0, 0.6)'
+            },
+            innertext: {
+                backgroundColor: 'rgb(153, 55, 38)',
+                maxWidth: 800,
+                width: '100%',
+                minHeight: 240,
+                padding: 32,
+                borderRadius: 8,
+            },
+            form_content: {
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 32,
+                gap: 32
+            },
+            userLoginDetails:{
+                flexDirection: 'column',
+                alignItems: 'center',
+                width: '100%',
+                justifyContent: 'center'
+            },
+            innertextH3: {
+                textAlign: 'center',
+                color: 'white',
+                fontSize: 27,
+                borderBottomWidth: 2,
+                borderBottomColor: 'black',
+                marginBottom: 16,
+                paddingVertical: 8,
+                paddingHorizontal: 8
+            },
+            innertextInput: {
+                width: '100%',
+                color: 'wheat',
+                paddingVertical: 16,
+                paddingHorizontal: 32,
+                borderRadius: 8,
+                borderWidth: 0,
+                backgroundColor: 'rgba(0, 0, 0, 0.6)'
+            },
+            login_btns: {
+                marginVertical: 16,
+                marginHorizontal: 0,
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 16,
+                justifyContent: 'space-around'
+            },
+            checked_btn:{
+                backgroundColor: 'green'
+            },
+            login_methods_btn: {
+                backgroundColor: 'rgba(245, 222, 179, 0.7)',
+                paddingVertical: 6.4,
+                paddingHorizontal: 16,
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderWidth: 2,
+                borderColor: 'black',
+                borderRadius: 6.4
+            },
+            start_game_btnActive: {
+                backgroundColor: 'rgba(255, 255, 255, 0.8)'
+            },
+            errorMessage: {
+                textAlign: 'center',
+                display: 'flex',
+                color: '#FFC107',
+                marginTop: 6.4
+            },
+            loadingSpinner: {
+                width: 16,
+                height: 16
+            },
+            start_game_btn: {
+                paddingVertical: 8,
+                paddingHorizontal: 16,
+                borderWidth: 0,
+                backgroundColor: 'white',
+                borderRadius: 32,
+                shadowColor: 'black',
+                shadowOffset: { width: 0, height: 0 },
+                shadowOpacity: 1,
+                shadowRadius: 7,
+                textAlign: 'center',
+                alignItems: 'center',
+                justifyContent: 'center',
+            },
+        })
+    )
+}

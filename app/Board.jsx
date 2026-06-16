@@ -22,9 +22,9 @@ const Board = ({toggleRestart, hasRestarted, playTriggered, activeBoxP1, disable
 	width = (width < 400 ? width : 300)
 	const cellwidth = width / 9
 	const styles = imageStyling(width, cellwidth)
-	const [isOpen, setIsOpen] = useState(Array(13).fill(false));
+	const [isOpen, setIsOpen] = useState(Array.from({length: 13}, () => (false)))
 	const [cellStates, setCellStates] = useState(
-		Array(13).fill().map(() => ({
+		Array.from({length: 13}, () => ({
 			yellow_cell:{
 				disabled: true,
 				focused: false
@@ -219,7 +219,7 @@ const Board = ({toggleRestart, hasRestarted, playTriggered, activeBoxP1, disable
 			setBonusPoints({...bonusPointsRef.current})
 
 			setCellStates(
-				Array(13).fill().map(() => ({
+				Array.from({length: 13}, () => ({
 					yellow_cell:{
 						disabled: true,
 						focused: false
@@ -228,7 +228,8 @@ const Board = ({toggleRestart, hasRestarted, playTriggered, activeBoxP1, disable
 						disabled: true,
 						focused: false
 					}
-			})))
+				}))
+			)
 
 			getTotalScore(totalScoreRef.current)
 			toggleRestart()
@@ -247,7 +248,7 @@ const Board = ({toggleRestart, hasRestarted, playTriggered, activeBoxP1, disable
 		}
 		for (let i = 0; i < cellStates.length; i++) {
 			setCellStates(
-				Array(13).fill().map(() => ({
+				Array.from({length: 13}, () => ({
 					yellow_cell:{
 						disabled: true,
 						focused: false
@@ -256,7 +257,8 @@ const Board = ({toggleRestart, hasRestarted, playTriggered, activeBoxP1, disable
 						disabled: true,
 						focused: false
 					}
-			})))
+				}))
+			)
 		}
 
 		bonusPointsRef.current = {p1: 0, p2: 0}

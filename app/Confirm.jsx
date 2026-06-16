@@ -2,7 +2,8 @@ import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-na
 import {useState, useEffect} from "react"
 
 function Winner({viewPage, message, setViewPage, response}){
-    const { width, height } = useWindowDimensions()
+    let { width, height } = useWindowDimensions()
+    width = (width < 400 ? width : 300)
 	const styles = imageStyling(width, height)
 
     return(<>
@@ -49,7 +50,7 @@ const imageStyling = (width, height) => {
                 justifyContent: 'center',
                 alignSelf: 'center',
                 flexDirection: 'column',
-                height: '100%',
+                height: height,
                 width: '100%',
                 backgroundColor: 'rgba(0, 0, 0, 0.6)'
             },

@@ -1,5 +1,4 @@
 import { Pressable, StyleSheet, Text, View, Image, useWindowDimensions } from 'react-native'
-import React, { useEffect, useRef, useState } from 'react'
 
 const toggleOpenToolTip = (setIsOpen, index) => {
 	setIsOpen(prev => {

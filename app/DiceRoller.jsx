@@ -10,7 +10,9 @@ import card_img_6 from '../assets/6-Yatzy.svg'
 import RollBtn from './RollBtn';
 
 const DiceRoller = ({active, dicesProps, setDicesProps, toggleDice, numOfRolls, dice_starting_index, set_dice_indexes, disable_rollBtn}) => {
-	const { width } = useWindowDimensions()
+	let { width } = useWindowDimensions()
+	width = (width < 400 ? width : 300)
+
 	const cellwidth = width / 7
 	const styles = imageStyling(width, cellwidth)
 	const [Dice1, Dice2, Dice3, Dice4, Dice5] = dicesProps
@@ -23,7 +25,10 @@ const DiceRoller = ({active, dicesProps, setDicesProps, toggleDice, numOfRolls, 
 		if(numOfRolls > 0){
 			let temp = [...dicesProps]
 			toggleDice(index)
-			temp[index].saved = !temp[index].saved
+			temp[index] = {
+				...temp[index],
+				saved: !temp[index].saved
+			}
 			let all_dices_saved = true;
 			for (let i = dice_starting_index; i < (dice_starting_index + num_of_dices); i++) {
 				if(!temp[i].saved){
