@@ -18,10 +18,10 @@ import Btn_cell from './Btn_cell.jsx'
 import * as Progress from 'react-native-progress';
 
 const Board = ({toggleRestart, hasRestarted, playTriggered, activeBoxP1, disable_playBtn, dice_indexes, triggerRoll, getTotalScore}) => {
-	let { width } = useWindowDimensions()
-	width = (width < 400 ? width : 300)
+	let { width, height } = useWindowDimensions()
+	width = (width < 400 ? width : 350)
 	const cellwidth = width / 9
-	const styles = imageStyling(width, cellwidth)
+	const styles = imageStyling(width, cellwidth, height)
 	const [isOpen, setIsOpen] = useState(Array.from({length: 13}, () => (false)))
 	const [cellStates, setCellStates] = useState(
 		Array.from({length: 13}, () => ({
@@ -436,7 +436,7 @@ const Board = ({toggleRestart, hasRestarted, playTriggered, activeBoxP1, disable
 
 export default Board
 
-const imageStyling = (width, cellwidth) =>{
+const imageStyling = (width, cellwidth, height) =>{
 	return(
 		StyleSheet.create({
 			main: {
@@ -447,22 +447,20 @@ const imageStyling = (width, cellwidth) =>{
 				borderWidth: 6.4,
 				borderColor: 'rgb(80, 22, 12)',
 				padding: 15,
-				paddingBottom: 30,
 				borderRadius: 32,
-				marginVertical: 20,
-				marginHorizontal: 10,
-				alignSelf: 'center'
+				marginVertical: width / 25,
+				alignSelf: 'center',
 			},
 			mainSection: {
 				display: 'flex',
 				flexDirection: 'column',
 				justifyContent: 'flex-start',
-				gap: 11.2,
+				gap: height / 40,
 			},
 			bonus: {
 				alignItems: 'center',
 				justifyContent: 'center',
-				gap: 4,
+				gap: width / 50,
 				fontSize: 3,
 				flexDirection: 'row',
 			},

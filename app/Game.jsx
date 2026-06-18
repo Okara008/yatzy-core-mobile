@@ -212,9 +212,9 @@ function Game(){
         setHasUnsavedChanges(true)
     }
 
-    // useEffect(()=>{
-    //     getStats()
-    // }, [])
+    useEffect(()=>{
+        getStats()
+    }, [])
 
     const updateOutcome = (name, outcome, score) => {
         for (let i = 0; i < playerStats.length; i++) {

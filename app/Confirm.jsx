@@ -1,5 +1,6 @@
 import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native'
 import {useState, useEffect} from "react"
+import OuterShell from './OuterShell'
 
 function Winner({viewPage, message, setViewPage, response}){
     let { width, height } = useWindowDimensions()
@@ -8,7 +9,7 @@ function Winner({viewPage, message, setViewPage, response}){
 
     return(<>
         {viewPage && (
-            <View style={styles.outerShell}>
+            <OuterShell>
                 <View style={styles.confirmSection}>
                     <Text style={styles.message}>{message}</Text>
                     <View style={styles.btnWrapper}>
@@ -31,7 +32,7 @@ function Winner({viewPage, message, setViewPage, response}){
                         </Pressable>
                     </View>
                 </View>
-            </View>
+            </OuterShell>
         )}
     </>)
 }
@@ -41,19 +42,6 @@ export default Winner
 const imageStyling = (width, height) => {
     return(
         StyleSheet.create({
-            outerShell: {
-                position: 'absolute',
-                zIndex: 998,
-                top: 0,
-                left: 0,
-                alignItems: 'center',
-                justifyContent: 'center',
-                alignSelf: 'center',
-                flexDirection: 'column',
-                height: height,
-                width: '100%',
-                backgroundColor: 'rgba(0, 0, 0, 0.6)'
-            },
             confirmSection: {
                 position: 'absolute',
                 top: height / 5,

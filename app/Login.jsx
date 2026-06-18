@@ -2,6 +2,7 @@ import { Pressable, StyleSheet, Text, TextInput, View, useWindowDimensions } fro
 import { useState, useRef, useEffect, useContext } from 'react'
 import { StatsContext } from './Context'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import OuterShell from './OuterShell'
 
 function Login({getStats, viewLoginPage}) {
     const {playerNames, setPlayerNames} = useContext(StatsContext)
@@ -159,7 +160,7 @@ function Login({getStats, viewLoginPage}) {
 
 return(<>
     {viewLoginPage && (
-		<View style={styles.outerShell}>
+		<OuterShell>
 			<View style={[styles.innertext, styles.loginForm]}>
 				<Text style={styles.innertextH3}>Welcome, Let's Play Yatzy!!</Text>
 
@@ -245,7 +246,7 @@ return(<>
                     <Text>Start Game</Text> 
 				</Pressable>
 			</View>
-		</View>
+		</OuterShell>
     )}
 </>)
 }
@@ -255,19 +256,6 @@ export default Login
 const imageStyling = (height) => {
 	return (
         StyleSheet.create({
-            outerShell: {
-                position: 'absolute',
-                zIndex: 998,
-                top: 0,
-                left: 0,
-                alignItems: 'center',
-                justifyContent: 'center',
-                alignSelf: 'center',
-                flexDirection: 'column',
-                height: '100%',
-                width: '100%',
-                backgroundColor: 'rgba(0, 0, 0, 0.6)'
-            },
             innertext: {
                 backgroundColor: 'rgb(153, 55, 38)',
                 maxWidth: 800,

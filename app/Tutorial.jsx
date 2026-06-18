@@ -8,6 +8,7 @@ import tutorial_play_btn from '../assets/tutorial_play_btn.png'
 import tutorial_bonus from '../assets/tutorial_bonus.png'
 import x_button from '../assets/x_icon.png'
 import { useEffect, useRef, useState } from 'react'
+import OuterShell from './OuterShell'
 
 const Tutorial = ({wasClicked, removeTutorial}) => {
 	const { height } = useWindowDimensions()
@@ -47,7 +48,7 @@ const Tutorial = ({wasClicked, removeTutorial}) => {
 
     return(<>
         {wasClicked && ( 
-            <View style={styles.outerShell}>
+            <OuterShell>
                 <View style={styles.tutorialSection}>
                     <Pressable style={({pressed}) => ([pressed && styles.x_buttonHover, styles.x_button])} onPress={removeTutorial}> 
 						<Image source={x_button} alt="x" style={{height: 35, resizeMode: 'contain'}} />
@@ -68,7 +69,7 @@ const Tutorial = ({wasClicked, removeTutorial}) => {
 						</Pressable>
                     </View>
                 </View>
-            </View>
+            </OuterShell>
         )}
     </>)
 }
@@ -78,19 +79,6 @@ export default Tutorial
 const imageStyling = (height) => {
 	return (
 		StyleSheet.create({
-			outerShell: {
-				position: 'absolute',
-				zIndex: 998,
-				top: 0,
-				left: 0,
-				alignItems: 'center',
-				justifyContent: 'center',
-				alignSelf: 'center',
-				flexDirection: 'column',
-				height: height,
-				width: '100%',
-				backgroundColor: 'rgba(0, 0, 0, 0.6)'
-			},
 			tutorialSection: {
 				position: 'relative',
 				width: 800,

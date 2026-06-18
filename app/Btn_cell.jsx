@@ -15,9 +15,9 @@ const toggleOpenToolTip = (setIsOpen, index) => {
 
 function Btn_cell({cellStates, ref_objects, Image, isOpen, setIsOpen, index, content, boxFocus, totalp1, totalp2}) {
 	let { width } = useWindowDimensions();
-	width = (width < 400 ? width : 300)
+	width = (width < 400 ? width : 350)
 	const cellwidth = width / 9
-	const styles = imageStyling(cellwidth)
+	const styles = imageStyling(width, cellwidth)
     return(<>
         <View style={styles.wrapper}>
 			{isOpen[index] && (
@@ -70,13 +70,13 @@ function Btn_cell({cellStates, ref_objects, Image, isOpen, setIsOpen, index, con
 
 export default Btn_cell
 
-const imageStyling = (cellwidth) =>{
+const imageStyling = (width, cellwidth) =>{
 	return (
 		StyleSheet.create({
 			wrapper:{
 				alignItems: 'center',
 				justifyContent: 'center',
-				gap: 4,
+				gap: width / 50,
 				flexDirection: 'row',
 			},
 			imgTooltip: {

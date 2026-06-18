@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet, Text, View, useWindowDimensions, Image } from 'react-native'
 import IMG from "../assets/restart.svg"
 import LeaderBoardIMG from '../assets/leaderboard.svg'
+import OuterShell from './OuterShell'
 import {useState, useEffect, useContext} from "react"
 import { StatsContext } from './Context'
 
@@ -41,7 +42,7 @@ function Winner({viewWinnerPage, winner_name, wasWon, restartGame, setViewPage})
 
     return(<>
         {viewWinnerPage && (
-        <View style={styles.outerShell}>
+        <OuterShell>
             <View style={styles.winnerSection}>
                 <Text style={styles.winnerSectionH3}>{wasWon ? "Winner" : "Draw"}</Text>
                 <Pressable style={styles.restartGame} title="Restart" onPress={restartGame}>
@@ -128,7 +129,7 @@ function Winner({viewWinnerPage, winner_name, wasWon, restartGame, setViewPage})
                     </View>}
                 </View>
             </View>
-        </View>
+        </OuterShell>
         )}
     </>)
 }
@@ -138,19 +139,6 @@ export default Winner
 const imageStyling = (width, height) => {
     return(
         StyleSheet.create({
-            outerShell: {
-                position: 'absolute',
-                zIndex: 998,
-                top: 0,
-                left: 0,
-                alignItems: 'center',
-                justifyContent: 'center',
-                alignSelf: 'center',
-                flexDirection: 'column',
-                height: height,
-                width: '100%',
-                backgroundColor: 'rgba(0, 0, 0, 0.6)'
-            },
             winnerSection: {
                 position: 'absolute',
                 top: '50%',

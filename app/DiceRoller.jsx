@@ -7,11 +7,10 @@ import card_img_3 from '../assets/3-Yatzy.svg'
 import card_img_4 from '../assets/4-Yatzy.svg' 
 import card_img_5 from '../assets/5-Yatzy.svg' 
 import card_img_6 from '../assets/6-Yatzy.svg' 
-import RollBtn from './RollBtn';
 
 const DiceRoller = ({active, dicesProps, setDicesProps, toggleDice, numOfRolls, dice_starting_index, set_dice_indexes, disable_rollBtn}) => {
 	let { width } = useWindowDimensions()
-	width = (width < 400 ? width : 300)
+	width = (width < 400 ? width : 350)
 
 	const cellwidth = width / 7
 	const styles = imageStyling(width, cellwidth)
@@ -103,7 +102,7 @@ const imageStyling = (width, cellwidth) => {
 	return(
 		StyleSheet.create({
 			diceRoller: {
-				marginVertical: 5,
+				marginBottom: 5,
 				justifyContent: 'center',
 				alignItems: 'center',
 				flexDirection: 'row',

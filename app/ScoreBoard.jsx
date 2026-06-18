@@ -30,7 +30,7 @@ const ScoreBoard = ({ scores }) => {
 
 export default ScoreBoard
 
-const imageStyling = () => {
+const imageStyling = (width) => {
 	return(
 		StyleSheet.create({
 			header: {
@@ -46,7 +46,7 @@ const imageStyling = () => {
 				position: 'relative'
 			},
 			headerAfter: {
-				marginTop: 15,
+				marginTop: 5,
 				width: 75,
 				height: 10,
 				borderRadius: 4,

@@ -1,10 +1,8 @@
 import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native'
-import React, { useRef, useState } from 'react'
 
 const RollBtn = ({clickCount, setClickCount, triggerRoll, disableRoll, disablePlay, handle_play, playerTurn}) => {
 	let { width } = useWindowDimensions()
-	width = (width < 400 ? width : 300)
-
+	width = (width < 400 ? width : 350)
 	const styles = imageStyling(width)
 
 	return (
@@ -18,7 +16,7 @@ const RollBtn = ({clickCount, setClickCount, triggerRoll, disableRoll, disablePl
 			</Pressable>
 
 			<Pressable onPress={handle_play} style={({pressed}) => ([styles.btnPlay, pressed && styles.btnPlayHover, disablePlay && styles.btnPlayDisabled])} disabled={disablePlay}>
-				<Text style={styles.btnText}>play</Text>
+				<Text numberOfLines={1} style={styles.btnText}>play</Text>
 			</Pressable>
 		</View>
 	)
@@ -49,7 +47,7 @@ const imageStyling = (width) => {
 				borderRadius: 16,
 				borderWidth: 4,
 				borderColor: 'rgb(65, 5, 5)',
-				width: (width * .7)
+				width: (width * .6)
 			},
 			btnRollDisabled: {
 				backgroundColor: 'gray',
@@ -68,7 +66,7 @@ const imageStyling = (width) => {
 				flexDirection: 'row',
 				alignItems: 'center',
 				justifyContent: 'center',
-				width: width * .25
+				width: width * .3
 			},
 			btnText: {
 				color: 'white',
